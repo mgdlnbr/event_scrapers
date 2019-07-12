@@ -42,6 +42,10 @@ for ev in events:
     for i in range(0,len(events2)):
         if(levenshtein(ev,events2[i]) < 3):
             unique_events.append(ev)
+    for j in range(0,len(events)):
+        if((levenshtein(ev,events[i]) < 3)):
+            unique_events.append(ev)
+
 
 for event in unique_events:
     ev = session.query(Event).filter_by(identifier=event['identifier']).first()
